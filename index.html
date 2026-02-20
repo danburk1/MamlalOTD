@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamlal Archive</title>
+    <style>
+        @font-face {
+            font-family: 'Marcus';
+            src: url('marcus.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Marcus', sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        #date {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+            white-space: pre-line; /* Allows the \n to break lines */
+        }
+
+        .word-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        #today {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        #yesterday, #tomorrow {
+            font-size: 1.2rem;
+            color: #999;
+        }
+
+        #definitionLabel {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            min-height: 50px;
+        }
+
+        .controls button {
+            font-family: 'Marcus', sans-serif;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #eee;
+        }
+
+        .controls button:hover {
+            background: #ddd;
+        }
+
+        .vowel-toggle {
+            margin-top: 20px;
+        }
+
+        #vowel {
+            width: 30px;
+            height: 30px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="date"></div>
+        
+        <div class="word-display">
+            <div id="yesterday"></div>
+            <div id="today">Loading...</div>
+            <div id="tomorrow"></div>
+        </div>
+
+        <div id="definitionLabel"></div>
+
+        <div class="controls">
+            <button id="Previous">Previous</button>
+            <button id="todayButton" style="display: none;">Today</button>
+            <button id="Next">Next</button>
+        </div>
+
+        <div class="vowel-toggle">
+            <span id="label2">Show Vowels: </span>
+            <button id="vowel"></button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
